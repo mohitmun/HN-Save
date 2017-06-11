@@ -1,0 +1,19 @@
+{
+  "name": "HN Save",
+  "description": "Save hackernews articles",
+  "version": "2.0",
+  "permissions": [
+    "*://*.ycombinator.com/*"
+  ],
+  "background": {
+    "page":"background.html",
+    "persistent": false,
+    "script": "background.js"
+  },
+  "content_scripts": [{
+    "matches": ["*://*.ycombinator.com/*"],
+    "js": ["jquery.min.js", "content.js"],
+    "run_at": "document_start"
+  }],
+  "manifest_version": 2
+}
